@@ -1,0 +1,12 @@
+dataset: cifar10
+model: resnet50
+attack: backdoor
+rate: 0.01
+target_class: 0
+trigger_size: 3
+trigger_position: bottom_right
+trigger_color: [255, 255, 255]
+epochs: 40
+batch_size: 128
+run_detectors: true
+max_minutes: 170
