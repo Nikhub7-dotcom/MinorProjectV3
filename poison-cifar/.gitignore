@@ -1,0 +1,16 @@
+# Raw dataset — always re-downloaded fresh (fast for CIFAR-10), never committed
+data/
+
+# Model checkpoints — large binary files, never committed
+checkpoints/
+
+# Per-epoch logs — regenerated every run, not needed in git
+logs/
+
+# Python
+__pycache__/
+*.pyc
+
+# results/ is INTENTIONALLY NOT ignored — each *_result.json is small,
+# and committing/pushing these back is how results get collected from
+# everyone's Colab runs into one place. See README.
