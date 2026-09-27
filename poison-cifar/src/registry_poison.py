@@ -127,6 +127,10 @@ def apply_trigger(image, trigger_config):
 
 def save_poison_metadata(path, meta):
     serializable = dict(meta)
+    if isinstance(serializable.get("poisoned_indices_set"), set):
+            serializable["poisoned_indices_set"] = sorted(
+                serializable["poisoned_indices_set"]
+            )
     serializable["poison_map"] = {str(k): v for k, v in meta["poison_map"].items()}
     with open(path, "w") as f:
         json.dump(serializable, f, indent=2)
