@@ -1,0 +1,49 @@
+{
+  "run_id": "cifar10_resnet18_backdoor_0p001",
+  "dataset": "cifar10",
+  "model": "resnet18",
+  "attack": "backdoor",
+  "rate": 0.001,
+  "target_class": 0,
+  "best_clean_test_acc": 0.9429,
+  "final_asr": 0.007333333333333333,
+  "epochs_run": 60,
+  "detectors": {
+    "knn": {
+      "auroc": 0.4918932932932933,
+      "average_precision": 0.0009880148955108605,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "false_positive_rate_at_k": 0.001001001001001001,
+      "n_poisoned": 50,
+      "n_total": 50000
+    },
+    "isolation_forest": {
+      "auroc": 0.47504064064064067,
+      "average_precision": 0.0009548350988070481,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "false_positive_rate_at_k": 0.001001001001001001,
+      "n_poisoned": 50,
+      "n_total": 50000
+    },
+    "kmeans": {
+      "auroc": 0.49281241241241236,
+      "average_precision": 0.0009954429955218629,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "false_positive_rate_at_k": 0.001001001001001001,
+      "n_poisoned": 50,
+      "n_total": 50000
+    },
+    "knn_label_agreement": {
+      "auroc": 0.9774374374374374,
+      "average_precision": 0.034665290594501005,
+      "precision_at_k": 0.04,
+      "recall_at_k": 0.04,
+      "false_positive_rate_at_k": 0.0009609609609609609,
+      "n_poisoned": 50,
+      "n_total": 50000
+    }
+  }
+}
