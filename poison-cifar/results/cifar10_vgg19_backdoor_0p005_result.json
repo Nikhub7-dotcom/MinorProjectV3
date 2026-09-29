@@ -1,0 +1,49 @@
+{
+  "run_id": "cifar10_vgg19_backdoor_0p005",
+  "dataset": "cifar10",
+  "model": "vgg19",
+  "attack": "backdoor",
+  "rate": 0.005,
+  "target_class": 0,
+  "best_clean_test_acc": 0.1,
+  "final_asr": 1.0,
+  "epochs_run": 40,
+  "detectors": {
+    "knn": {
+      "auroc": 0.5108085226130654,
+      "average_precision": 0.00501212160896687,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "false_positive_rate_at_k": 0.005025125628140704,
+      "n_poisoned": 250,
+      "n_total": 50000
+    },
+    "isolation_forest": {
+      "auroc": 0.48869451256281404,
+      "average_precision": 0.004889409184308913,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "false_positive_rate_at_k": 0.005025125628140704,
+      "n_poisoned": 250,
+      "n_total": 50000
+    },
+    "kmeans": {
+      "auroc": 0.49354082412060307,
+      "average_precision": 0.004828218207137582,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "false_positive_rate_at_k": 0.005025125628140704,
+      "n_poisoned": 250,
+      "n_total": 50000
+    },
+    "knn_label_agreement": {
+      "auroc": 0.9780518994974874,
+      "average_precision": 0.13735002237539734,
+      "precision_at_k": 0.16,
+      "recall_at_k": 0.16,
+      "false_positive_rate_at_k": 0.004221105527638191,
+      "n_poisoned": 250,
+      "n_total": 50000
+    }
+  }
+}
