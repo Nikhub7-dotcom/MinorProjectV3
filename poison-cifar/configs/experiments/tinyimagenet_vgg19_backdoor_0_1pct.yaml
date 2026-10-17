@@ -1,0 +1,6 @@
+dataset: tinyimagenet
+model: vgg19
+attack: backdoor
+rate: 0.001
+target_class: 0
+epochs: 40

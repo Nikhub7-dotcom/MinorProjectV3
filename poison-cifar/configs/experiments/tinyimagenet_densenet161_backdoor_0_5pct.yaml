@@ -1,0 +1,6 @@
+dataset: tinyimagenet
+model: densenet161
+attack: backdoor
+rate: 0.005
+target_class: 0
+epochs: 30

@@ -1,0 +1,6 @@
+dataset: cifar10
+model: densenet161
+attack: backdoor
+rate: 0.001
+target_class: 0
+epochs: 30

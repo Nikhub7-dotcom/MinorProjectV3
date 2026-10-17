@@ -1,0 +1,6 @@
+dataset: gtsrb
+model: resnet18
+attack: backdoor
+rate: 0.001
+target_class: 0
+epochs: 60

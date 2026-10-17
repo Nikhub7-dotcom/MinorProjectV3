@@ -1,0 +1,6 @@
+dataset: cifar10
+model: resnet10
+attack: backdoor
+rate: 0.01
+target_class: 0
+epochs: 60

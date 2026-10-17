@@ -1,0 +1,6 @@
+dataset: imagenet_subset
+model: resnet50
+attack: backdoor
+rate: 0.001
+target_class: 0
+epochs: 40
