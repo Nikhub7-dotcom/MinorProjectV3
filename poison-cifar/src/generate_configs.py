@@ -14,55 +14,54 @@ below instead, or copy a generated file to a new name if you want a
 one-off variant.
 """
 import os
-import sys
+import yaml
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from registry_models import MODEL_NAMES
-
-RATES = [0.001, 0.005, 0.01]  # 0.1%, 0.5%, 1%
+MODELS = ["resnet10", "resnet18", "resnet50", "vgg19", "densenet161"]
+DATASETS = ["cifar10", "mnist", "gtsrb", "tinyimagenet", "imagenet_subset"]
+RATES = [0.001, 0.005, 0.01]
 ATTACK = "backdoor"
 TARGET_CLASS = 0
+
 EPOCHS_BY_MODEL = {
-    # Heavier architectures get fewer default epochs to keep a full
-    # sweep finishing in reasonable time — bump these yourself for a
-    # final run once you've smoke-tested each one.
-    "resnet10": 60, "resnet18": 60, "resnet50": 40, "vgg19": 40, "densenet161": 30,
+    "resnet10": 60,
+    "resnet18": 60,
+    "resnet50": 40,
+    "vgg19": 40,
+    "densenet161": 30,
 }
 
-OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "configs", "experiments")
+RATE_TAGS = {
+    0.001: "0_1pct",
+    0.005: "0_5pct",
+    0.01: "1pct",
+}
 
-
-def rate_tag(rate):
-    return str(rate).replace(".", "p")
+OUT_DIR = "configs/experiments"
 
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-    written = []
-    for model in MODEL_NAMES:
-        for rate in RATES:
-            name = f"cifar10_{model}_{ATTACK}_{rate_tag(rate)}.yaml"
-            path = os.path.join(OUT_DIR, name)
-            content = f"""dataset: cifar10
-model: {model}
-attack: {ATTACK}
-rate: {rate}
-target_class: {TARGET_CLASS}
-trigger_size: 3
-trigger_position: bottom_right
-trigger_color: [255, 255, 255]
-epochs: {EPOCHS_BY_MODEL[model]}
-batch_size: 128
-run_detectors: true
-max_minutes: 170
-"""
-            with open(path, "w") as f:
-                f.write(content)
-            written.append(name)
+    for dataset in DATASETS:
+        for model in MODELS:
+            for rate in RATES:
+                fname = f"{dataset}_{model}_{ATTACK}_{RATE_TAGS[rate]}.yaml"
+                path = os.path.join(OUT_DIR, fname)
 
-    print(f"[generate_configs] wrote {len(written)} configs to {OUT_DIR}:")
-    for name in written:
-        print(f"  {name}")
+                if os.path.exists(path):
+                    print(f"skip (exists) {path}")
+                    continue
+
+                cfg = {
+                    "dataset": dataset,
+                    "model": model,
+                    "attack": ATTACK,
+                    "rate": rate,
+                    "target_class": TARGET_CLASS,
+                    "epochs": EPOCHS_BY_MODEL[model],
+                }
+                with open(path, "w") as f:
+                    yaml.safe_dump(cfg, f, sort_keys=False)
+                print(f"wrote {path}")
 
 
 if __name__ == "__main__":
