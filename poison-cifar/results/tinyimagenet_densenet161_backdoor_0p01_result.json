@@ -1,0 +1,11 @@
+{
+  "run_id": "tinyimagenet_densenet161_backdoor_0p01",
+  "dataset": "tinyimagenet",
+  "model": "densenet161",
+  "attack": "backdoor",
+  "rate": 0.01,
+  "target_class": 0,
+  "best_clean_test_acc": 0.98013,
+  "final_asr": 0.3230452261306533,
+  "epochs_run": 30
+}
