@@ -1,0 +1,11 @@
+{
+  "run_id": "gtsrb_resnet18_backdoor_0p005",
+  "dataset": "gtsrb",
+  "model": "resnet18",
+  "attack": "backdoor",
+  "rate": 0.005,
+  "target_class": 0,
+  "best_clean_test_acc": 0.9890736342042755,
+  "final_asr": 0.5548926014319809,
+  "epochs_run": 60
+}
