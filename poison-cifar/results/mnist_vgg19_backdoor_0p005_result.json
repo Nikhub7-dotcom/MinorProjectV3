@@ -1,0 +1,11 @@
+{
+  "run_id": "mnist_vgg19_backdoor_0p005",
+  "dataset": "mnist",
+  "model": "vgg19",
+  "attack": "backdoor",
+  "rate": 0.005,
+  "target_class": 0,
+  "best_clean_test_acc": 0.1135,
+  "final_asr": 0.0,
+  "epochs_run": 40
+}
