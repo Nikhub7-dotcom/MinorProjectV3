@@ -68,7 +68,7 @@ def build_model(arch, num_classes, in_channels=3, image_size=32):
         return _adapt_resnet_stem(model, in_channels, image_size)
 
     if arch == "vgg19":
-        backbone = tvm.vgg19(weights=None, num_classes=num_classes)
+        backbone = tvm.vgg19_bn(weights=None, num_classes=num_classes)
         if in_channels != 3:
             old = backbone.features[0]
             backbone.features[0] = nn.Conv2d(in_channels, old.out_channels, kernel_size=old.kernel_size,
