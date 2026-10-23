@@ -1,0 +1,11 @@
+{
+  "run_id": "tinyimagenet_resnet18_backdoor_0p01",
+  "dataset": "tinyimagenet",
+  "model": "resnet18",
+  "attack": "backdoor",
+  "rate": 0.01,
+  "target_class": 0,
+  "best_clean_test_acc": 0.99003,
+  "final_asr": 0.0829145728643216,
+  "epochs_run": 60
+}
