@@ -1,0 +1,11 @@
+{
+  "run_id": "imagenet_subset_densenet161_backdoor_0p01",
+  "dataset": "imagenet_subset",
+  "model": "densenet161",
+  "attack": "backdoor",
+  "rate": 0.01,
+  "target_class": 0,
+  "best_clean_test_acc": 0.8588535031847134,
+  "final_asr": 0.013284341435839458,
+  "epochs_run": 30
+}
