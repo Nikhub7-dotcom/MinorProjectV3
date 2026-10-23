@@ -1,0 +1,11 @@
+{
+  "run_id": "imagenet_subset_resnet50_backdoor_0p001",
+  "dataset": "imagenet_subset",
+  "model": "resnet50",
+  "attack": "backdoor",
+  "rate": 0.001,
+  "target_class": 0,
+  "best_clean_test_acc": 0.7887898089171974,
+  "final_asr": 0.010740531373657434,
+  "epochs_run": 40
+}
