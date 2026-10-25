@@ -1,0 +1,11 @@
+{
+  "run_id": "mnist_resnet10_backdoor_0p005",
+  "dataset": "mnist",
+  "model": "resnet10",
+  "attack": "backdoor",
+  "rate": 0.005,
+  "target_class": 0,
+  "best_clean_test_acc": 0.9972,
+  "final_asr": 0.9993348115299335,
+  "epochs_run": 60
+}
