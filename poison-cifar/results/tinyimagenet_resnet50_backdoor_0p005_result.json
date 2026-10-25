@@ -1,0 +1,11 @@
+{
+  "run_id": "tinyimagenet_resnet50_backdoor_0p005",
+  "dataset": "tinyimagenet",
+  "model": "resnet50",
+  "attack": "backdoor",
+  "rate": 0.005,
+  "target_class": 0,
+  "best_clean_test_acc": 0.96483,
+  "final_asr": 0.0037688442211055275,
+  "epochs_run": 40
+}
